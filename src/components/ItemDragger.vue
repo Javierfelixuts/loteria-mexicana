@@ -142,49 +142,7 @@ const removeCard = (index: number) => {
   droppedMeals.value.splice(index, 1);
 };
 
-// Función para imprimir solo la zona de drop
-const printGrid = () => {
-  let printContent = document.getElementById("printable-grid");
-  let img:any = document.createElement('img');
-  img.src = '../assets/cartas/small/1 el gallo.jpg';
-  printContent?.parentNode?.appendChild(img);
-  const elements = document.querySelectorAll('.removeCard')
-  console.log("elementos: ", elements);
-  elements.forEach(element => {
-    element.remove();
-  });
-  if (printContent) {
-    const newWindow = window.open("", "", "width=800,height=600");
-    if (newWindow) {
-      newWindow.document.write(`
-        <html>
-          <head>
-            <title></title>
-            <style>
-              body { text-align: center; font-family: Arial, sans-serif; }
-              #printable-grid { display: grid; grid-template-columns: repeat(4, 150px); width: 900px; }
-              #printable-grid img {  border-top: 2px  solid black !important; border-right: 1px solid black !important; border-bottom: 1px solid black !important;
-              border-left: 2px solid black !important;
-              box-shadow: none !important; width: 140px; height: auto; margin-bottom: 8px; }
-              img { width: 150px}
-              @media print { body * { visibility: hidden; } #custom-text, #title, #logo, #logo2 { visibility: visible; } #printable-grid, #printable-grid * { visibility: visible; } }
-            </style>
-          </head>
-          <body>
-          <div>
-            <!-- <img id="logo" src="/logo/JARTEC.jpg" style="margin-bottom: 2px;" alt="jartec" width="100" height="50"/> -->
-            ${printContent.outerHTML}
-            </div>
-            <script>
-              setTimeout(() => { window.print(); window.close(); }, 500);
-            <\/script>
-          </body>
-        </html>
-      `);
-      newWindow.document.close();
-    }
-  }
-};
+
 </script>
 
 <template>
