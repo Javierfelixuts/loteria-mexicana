@@ -14,9 +14,6 @@ interface Card {
   img: string;
   name: string;
 }
-const path = '../assets/cartas';
-
-const editing = ref(true);
 
 // Lista de cartas disponibles (NO se deben perder)
 const meals = ref<Card[]>([
@@ -201,18 +198,22 @@ const removeCard = (index: number) => {
 </script>
 
 <template>
-  <button @click="shuffleCards" class="p-2 bg-blue-200 text-white rounded-md mb-4" style="background-color: chocolate;">Revolver</button>
-  <button @click="handleDataBeforePrint" class="p-2 bg-blue-200 text-white rounded-md mb-4" style="background-color: rebeccapurple;">Imprimir Grid</button>
-  <button @click="showAvailableCards" class="p-2 bg-blue-200 text-white rounded-md mb-4" style="background-color: green;">Mostrar cartas</button>
+  <div class="m-3">
+
+    <span @click="shuffleCards" class="p-2 bg-blue-200 cursor-pointer text-white rounded-md mb-4" style="background-color: chocolate;">
+      <v-icon name="bi-shuffle" scale="1" />
+    </span>
+    <span @click="handleDataBeforePrint" class="p-2 bg-blue-200 cursor-pointer text-white rounded-md mb-4" style="background-color: rebeccapurple;">
+      <v-icon name="md-localprintshop-round" scale="1" />
+    </span>
+    <span @click="showAvailableCards" class="p-2 bg-blue-200 cursor-pointer text-white rounded-md mb-4" style="background-color: green;">
+      <v-icon name="gi-card-exchange" scale="1" />
+    </span>
+  </div>
   
-  <v-icon name="md-localprintshop-round" scale="2" />
-    <v-icon name="bi-music-player" />
-    <MdLocalprintshopRound />
-    <v-icon name="fc-globe" />
-    <v-icon name="oi-repo-pull" />
-    <v-icon name="vi-file-type-gridsome" />
+ 
   
-  <div>
+  <div class="m-2">
     <input type="text" class="px-2 py-1 border rounded" v-model="userName" placeholder="Escribe tu nombre">
   </div>
 
