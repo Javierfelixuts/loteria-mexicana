@@ -9,9 +9,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@tailwindcss/forms": "^0.5.10",
     "@tailwindcss/vite": "^4.0.14",
     "@types/vuedraggable": "^2.24.0",
     "@vueuse/core": "^13.0.0",
+    "oh-vue-icons": "^1.0.0-rc3",
     "tailwindcss": "^4.0.14",
     "vue": "^3.5.13",
     "vue-to-print": "^1.4.0",
